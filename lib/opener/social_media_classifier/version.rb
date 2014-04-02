@@ -1,5 +1,5 @@
 module Opener
   class SocialMediaClassifier
-    VERSION = '0.0.1'
+    VERSION = '0.0.2'
   end # SocialMediaClassifier
 end # Opener
