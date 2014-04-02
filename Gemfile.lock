@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    opener-social-media-classifier (0.0.1)
+    opener-social-media-classifier (0.0.2)
       opener-build-tools
 
 GEM
