@@ -3,7 +3,7 @@ require File.expand_path('../lib/opener/social_media_classifier/version', __FILE
 generated = Dir.glob('core/target/weka.jar')
 
 Gem::Specification.new do |gem|
-  gem.name          = 'social-media-classifier'
+  gem.name          = 'opener-social-media-classifier'
   gem.version       = Opener::SocialMediaClassifier::VERSION
   gem.authors       = ['development@olery.com']
   gem.summary       = 'Opener Component for classifying Social Media.'

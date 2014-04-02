@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    social-media-classifier (0.0.1)
+    opener-social-media-classifier (0.0.1)
       opener-build-tools
       rake
 
@@ -48,6 +48,6 @@ PLATFORMS
 
 DEPENDENCIES
   cucumber
+  opener-social-media-classifier!
   pry
   rspec
-  social-media-classifier!
