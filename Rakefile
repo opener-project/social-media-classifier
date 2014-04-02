@@ -32,14 +32,8 @@ task :generate => :requirements do
   sh command
 end
 
-desc 'Alias for java:compile'
-task :compile => :generate do
-  command = "java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.filters.supervised.attribute.AddClassification -serialized #{TMP_DIRECTORY}/rf.model -classification  -remove-old-class -i #{CORE_DIRECTORY}/target/test1.arff -o #{TMP_DIRECTORY}/output.arff -c last"
-  sh command
-end
-
 desc 'Runs the tests'
-task :test => :compile do
+task :test => :generate do
   sh 'cucumber features'
 end
 
