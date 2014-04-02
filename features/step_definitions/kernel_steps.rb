@@ -5,7 +5,7 @@ end
 
 Given /^I put them through the kernel$/ do
   @output = "output_#{rand(1000)}_#{@filename}"
-  kernel(@input, @output).classify
+  kernel(@input, tmp_file(@output)).classify
 end
 
 Then /^the output should match the fixture "(.*?)"$/ do |filename|

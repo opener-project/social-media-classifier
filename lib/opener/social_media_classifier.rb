@@ -12,15 +12,17 @@ module Opener
     TMP_DIRECTORY = File.expand_path('../../../tmp', __FILE__)
     
     ##
-    # Input filename (full path) of the set that we want to be classified.
-    # Output filename (only name, stored in tmp directory.)
+    # input filename of the set that we want to be classified.
+    # output filename. 
+    # Full path or relative path (current directory.)
+    #
     def initialize(input, output)
       @input  = input
       @output = output
     end
     
     def classify
-      command = "java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.filters.supervised.attribute.AddClassification -serialized #{TMP_DIRECTORY}/rf.model -classification  -remove-old-class -i #{input} -o #{TMP_DIRECTORY}/#{output} -c last"
+      command = "java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.filters.supervised.attribute.AddClassification -serialized #{TMP_DIRECTORY}/rf.model -classification  -remove-old-class -i #{input} -o #{output} -c last"
       `#{command}`
     end
   end
