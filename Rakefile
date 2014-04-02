@@ -40,5 +40,5 @@ end
 desc 'Cleans the repository'
 task :clean => ['java:clean:packages', 'clean:tmp']
 
-task :build   => :compile
+task :build
 task :default => :test
