@@ -29,11 +29,7 @@ Using specific install:
     gem specific_install opener-social-media-classifier \
        -l https://github.com/opener-project/social-media-classifier.git
 
-## Usage
-
-    social-media-classifier input output
-
-## Contributing
+## Generate the model (required)
 
 First make sure all the required dependencies are installed:
 
@@ -43,8 +39,28 @@ Then generate the required Weka model:
 
     bundle exec rake generate
 
-For this you'll need to have Java 1.7. These requirements
+For this you'll need to have Java 1.7. and maven.
+
+To install them:
+
+sudo apt-get purge openjdk*
+
+sudo add-apt-repository ppa:webupd8team/java
+
+sudo apt-get update
+ 
+sudo apt-get install oracle-java7-installer
+
+sudo apt-get install maven
+
+These requirements
 are verified for you before the Rake.
+
+
+## Usage
+
+    social-media-classifier input output
+
 
 ## Testing
 
