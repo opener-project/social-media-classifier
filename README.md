@@ -43,15 +43,15 @@ For this you'll need to have Java 1.7. and maven.
 
 To install them:
 
-sudo apt-get purge openjdk*
+    sudo apt-get purge openjdk*
 
-sudo add-apt-repository ppa:webupd8team/java
+    sudo add-apt-repository ppa:webupd8team/java
 
-sudo apt-get update
+    sudo apt-get update
  
-sudo apt-get install oracle-java7-installer
+    sudo apt-get install oracle-java7-installer
 
-sudo apt-get install maven
+    sudo apt-get install maven
 
 These requirements
 are verified for you before the Rake.
