@@ -22,7 +22,7 @@ module Opener
     end
     
     def classify
-      command = "java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.filters.supervised.attribute.AddClassification -serialized #{TMP_DIRECTORY}/rf.model -classification  -remove-old-class -i #{input} -o #{output} -c last"
+      command = "java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.filters.supervised.attribute.AddClassification -serialized #{TMP_DIRECTORY}/rf_liking.model -classification  -remove-old-class -i #{input} -o #{output}.liking -c last && java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.filters.supervised.attribute.AddClassification -serialized #{TMP_DIRECTORY}/rf_recommendation.model -classification  -remove-old-class -i #{input} -o #{output}.recommendation -c last"
       `#{command}`
     end
   end

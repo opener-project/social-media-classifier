@@ -1,6 +1,8 @@
 # Social Media Classifier
 
 This repository contains the source code used for classifying Social Media.
+Thui version classifies Facebook pages for hotels, both for liking and for recommendation
+(see documentation)
 
 ## Requirements
 
@@ -60,6 +62,7 @@ are verified for you before the Rake.
 ## Usage
 
     social-media-classifier input output
+    (produces two files <output.liking> <output.recommendation> )
 
 
 ## Testing

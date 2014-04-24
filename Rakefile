@@ -28,8 +28,11 @@ end
 
 desc 'Generate model from training set'
 task :generate => :requirements do
-  command = "java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.classifiers.meta.FilteredClassifier -t #{CORE_DIRECTORY}/target/training.arff  -d #{TMP_DIRECTORY}/rf.model -F 'weka.filters.MultiFilter -F weka.filters.unsupervised.attribute.StringToWordVector -F weka.filters.unsupervised.attribute.Standardize' -W  weka.classifiers.trees.RandomForest -- -I 100"
-  sh command
+  command1 = "java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.classifiers.meta.FilteredClassifier -t #{CORE_DIRECTORY}/target/training_liking.arff  -d #{TMP_DIRECTORY}/rf_liking.model -F 'weka.filters.MultiFilter -F weka.filters.unsupervised.attribute.StringToWordVector -F weka.filters.unsupervised.attribute.Standardize' -W  weka.classifiers.trees.RandomForest -- -I 100"
+  command2 = "java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.classifiers.meta.FilteredClassifier -t #{CORE_DIRECTORY}/target/training_recommendation.arff  -d #{TMP_DIRECTORY}/rf_recommendation.model -F 'weka.filters.MultiFilter -F weka.filters.unsupervised.attribute.StringToWordVector -F weka.filters.unsupervised.attribute.Standardize' -W  weka.classifiers.trees.RandomForest -- -I 100"
+  sh command1
+  sh command2
+
 end
 
 desc 'Runs the tests'
