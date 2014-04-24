@@ -1,7 +1,7 @@
 # Social Media Classifier
 
 This repository contains the source code used for classifying Social Media.
-Thui version classifies Facebook pages for hotels, both for liking and for recommendation
+This version classifies Facebook pages for hotels, both for liking and for recommendation
 (see documentation)
 
 ## Requirements
@@ -43,7 +43,7 @@ Then generate the required Weka model:
 
 For this you'll need to have Java 1.7. and maven.
 
-To install them:
+To install them (on linux):
 
     sudo apt-get purge openjdk*
 
