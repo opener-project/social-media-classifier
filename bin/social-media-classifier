@@ -2,7 +2,7 @@
 
 require_relative '../lib/opener/social_media_classifier'
 
-raise ArgumentError("Usage: social-media-classifier type input.arff output.arff") if ARGV.count != 3
-kernel = Opener::SocialMediaClassifier.new(ARGV[0], ARGV[1], ARGV[2])
+raise ArgumentError("Usage: social-media-classifier input.arff output.arff") if ARGV.count != 2
+kernel = Opener::SocialMediaClassifier.new(ARGV[0], ARGV[1])
 
 kernel.classify
