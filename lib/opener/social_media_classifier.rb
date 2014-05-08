@@ -22,8 +22,14 @@ module Opener
     end
     
     def classify
-      command = "java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.filters.supervised.attribute.AddClassification -serialized #{TMP_DIRECTORY}/rf_liking.model -classification  -remove-old-class -i #{input} -o #{output}.liking -c last && java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.filters.supervised.attribute.AddClassification -serialized #{TMP_DIRECTORY}/rf_recommendation.model -classification  -remove-old-class -i #{input} -o #{output}.recommendation -c last"
-      `#{command}`
+      command1 = "sed -i '18s/.*/@attribute category? {0,1,2,3}/' #{input}"
+      command2 = "java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.filters.supervised.attribute.AddClassification -serialized #{TMP_DIRECTORY}/rf_liking.model -classification  -remove-old-class -i #{input} -o #{output}.liking -c last"
+      command3 = "sed -i '18s/.*/@attribute category? {0,1}/' #{input}"
+      command4 = "java -classpath #{CORE_DIRECTORY}/target/weka.jar weka.filters.supervised.attribute.AddClassification -serialized #{TMP_DIRECTORY}/rf_recommendation.model -classification  -remove-old-class -i #{input} -o #{output}.recommendation -c last"
+      `#{command1}`
+      `#{command2}`
+      `#{command3}`
+      `#{command4}`
     end
   end
 end
